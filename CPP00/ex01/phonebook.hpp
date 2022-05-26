@@ -3,17 +3,26 @@
 
 #include "contact.hpp"
 #include <iostream>
-#include <string.h>
+#include <cstring>
+#include <cstdbool>
 
 
-class phonebook
+class PhoneBook
 {
+	private:
+		int	_contactNbr;
+
 	public:
-		contact	contact[8];
-		int		num;
-		void	ft_init_num();
-		void	ft_add_num();
-		int		ft_return_num();
-		void	ft_display_list();
+		Contact	contact[8];
+		void	addContact(PhoneBook *rubric);
+		void	searchContact(PhoneBook *rubric);
+		int		getContactNbr(void);
+		void	addContactNbr(int value);
+		void	setContactNbr(int value);
+		void	printContact(PhoneBook *rubric);
+		void	printFullContact(PhoneBook *rubric, int i);
+
+		PhoneBook(void);
+		~PhoneBook(void);
 };
 #endif
