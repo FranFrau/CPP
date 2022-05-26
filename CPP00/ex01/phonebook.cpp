@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:57:04 by ffrau             #+#    #+#             */
-/*   Updated: 2022/05/26 18:49:45 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/05/26 19:16:27 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,13 +90,18 @@ void	PhoneBook::printContact(PhoneBook *rubric)
 	}
 	std::cout<<"Insert the index of the contact you want to see : ";
 	std::getline(std::cin, line);
-	if (line.empty() || (line[0] < '1' && line[0] > '8'))
+	if (line.empty() || (line[0] < '1' || line[0] > '8'))
 		return;
 	printFullContact(rubric, line[0] - '1');
 }
 
 void	PhoneBook::printFullContact(PhoneBook *rubric, int i)
 {
+	if (rubric->contact[i].getFirstName().empty())
+	{
+		std::cout << "Invalid index" << std::endl;
+		return;
+	}
 	std::cout << "First name: " << rubric->contact[i].getFirstName() << std::endl;
 	std::cout << "Last name: " << rubric->contact[i].getLastName() << std::endl;
 	std::cout << "Nickname: " << rubric->contact[i].getNickname() << std::endl;
