@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
+/*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 21:53:11 by ffrau             #+#    #+#             */
-/*   Updated: 2022/05/25 21:53:12 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/05/26 10:34:28 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-void	megaphone(int argc, char **argv)
+void	megaphone(char **argv)
 {
 	for (int i = 1; argv[i]; i++)
 	{
@@ -23,26 +23,8 @@ void	megaphone(int argc, char **argv)
 			else
 				std::cout << argv[i][j];
 		}
-		if (i != argc - 1)
-			std::cout << " ";
 	}
-	
-	// int j = 1;
-	// while (argv[j])
-	// {
-	// 	int i = 0;
-	// 	while (argv[j][i])
-	// 	{
-	// 		if (argv[j][i] >= 'a' && argv[j][i] <= 'z')
-	// 			std::cout << (char)toupper(argv[j][i]);
-	// 		else
-	// 			std::cout << argv[j][i];
-	// 		i++;
-	// 	}
-	// 	if (j != argc - 1)
-	// 		std::cout << " ";
-	// 	j++;
-	// }
+	std::cout << std::endl;
 }
 
 int main(int argc, char **argv)
@@ -52,6 +34,6 @@ int main(int argc, char **argv)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (1);
 	}
-	megaphone(argc, argv);
+	megaphone(argv);
 	return (0);
 }

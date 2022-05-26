@@ -3,29 +3,31 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+         #
+#    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 21:53:07 by ffrau             #+#    #+#              #
-#    Updated: 2022/05/25 21:53:08 by ffrau            ###   ########.fr        #
+#    Updated: 2022/05/26 10:42:26 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= megaphone
 
+CC				= clang++
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
+
 SRCS			= megaphone.cpp
+
 OBJ				= $(SRCS:.cpp=.o)
 
-CC				= clang++
-RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror
-
 %.o:			%.cpp
-				$(CC) $(CFLAGS) -c $< -o $@
+				$(CC) $(CFLAGS) -g -c $< -o $@
 
-all:			$(NAME)
+RM				= rm -rf
 
 $(NAME):		$(OBJ)
 				$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+
+all:			$(NAME)
 
 clean:
 				$(RM) $(OBJ)
