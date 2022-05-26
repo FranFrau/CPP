@@ -6,18 +6,17 @@
 #    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/25 21:53:07 by ffrau             #+#    #+#              #
-#    Updated: 2022/05/26 20:23:50 by ffrau            ###   ########.fr        #
+#    Updated: 2022/05/26 20:21:36 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= phonebook
+NAME			= dreams
 
 CC				= clang++
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
-SRCS			=	main.cpp	\
-					Contact.cpp	\
-					PhoneBook.cpp
+SRCS			=	test.cpp	\
+					Account.cpp	\
 
 OBJ				= $(SRCS:.cpp=.o)
 

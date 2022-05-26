@@ -6,11 +6,11 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:57:04 by ffrau             #+#    #+#             */
-/*   Updated: 2022/05/26 19:16:27 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/05/26 20:24:33 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -76,11 +76,11 @@ void	PhoneBook::printContact(PhoneBook *rubric)
 {
 	std::string	line;
 
-	std::cout << "     index|first name| last name|  nickname" << std::endl;
-	std::cout << "----------|----------|----------|---------" << std::endl;
+	std::cout << "|    index|first name| last name|  nickname" << std::endl;
+	std::cout << "|---------|----------|----------|----------|" << std::endl;
 	for (int i = 0; isValid(rubric, i); i++)
 	{
-		std::cout << "         " << i + 1 << "|";
+		std::cout << "|        " << i + 1 << "|";
 		truncate(rubric->contact[i].getFirstName(), 10);
 		std::cout << "|";
 		truncate(rubric->contact[i].getLastName(), 10);

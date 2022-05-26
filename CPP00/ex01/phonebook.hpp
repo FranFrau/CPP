@@ -1,7 +1,7 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "contact.hpp"
+#include "Contact.hpp"
 #include <iostream>
 #include <cstring>
 #include <cstdbool>

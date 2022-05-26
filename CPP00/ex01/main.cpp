@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 std::string toUpperString(std::string str)
 {
@@ -18,7 +18,7 @@ std::string toUpperString(std::string str)
 int main(void)
 {
 	PhoneBook	rubric;
-	std::string	input;// = "INIT";
+	std::string	input;
 
 	while (input.compare("EXIT"))
 	{

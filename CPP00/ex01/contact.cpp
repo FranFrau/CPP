@@ -6,11 +6,11 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:39:55 by ffrau             #+#    #+#             */
-/*   Updated: 2022/05/26 16:43:06 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/05/26 20:24:24 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 Contact::Contact(void)
 {
