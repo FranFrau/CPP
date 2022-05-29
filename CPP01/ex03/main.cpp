@@ -5,23 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/29 11:16:27 by ffrau             #+#    #+#             */
-/*   Updated: 2022/05/29 16:52:22 by ffrau            ###   ########.fr       */
+/*   Created: 2022/05/29 14:56:12 by ffrau             #+#    #+#             */
+/*   Updated: 2022/05/29 17:12:33 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
 int main()
 {
-	int		n;
-	Zombie	*z;
-	
-	std::cout << "Choose a number: ";
-	std::cin >> n;
-	z = zombieHorde(n, "Anto");
-	for (int i = 0; i < n; i++)
-		z[i].announce();
-	delete[] z;
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return 0;
 }
