@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/29 11:20:49 by ffrau             #+#    #+#             */
-/*   Updated: 2022/05/29 11:41:25 by ffrau            ###   ########.fr       */
+/*   Created: 2022/05/29 11:47:05 by ffrau             #+#    #+#             */
+/*   Updated: 2022/05/29 11:53:39 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie* zombieHorde(int N, std::string name)
+int main()
 {
-	Zombie	*horde;
-
-	horde = new Zombie[N];
+	std::string brain = "HI THIS IS BRAIN";
+	std::string *stringPTR = &brain;
+	std::string &stringREF = brain;
 	
-	for (int i = 0; i < N; i++)
-		horde[i].setName(name);
-	return (horde);
+	std::cout << &brain << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+	
+	std::cout << brain << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
+	return 0;
 }
