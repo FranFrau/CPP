@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 17:40:55 by ffrau             #+#    #+#             */
-/*   Updated: 2022/05/29 18:14:51 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/05/30 10:02:04 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,34 @@
 
 int main(int argc, char **argv)
 {
+	std::ofstream outfile;
+	std::ifstream file;
+	std::string streplace;
+	std::string mystring;
+	std::string filename;
+	std::string str;
+	size_t i = 0;
+	size_t j = 0;
+	char mychar;
+	
 	if (argc == 4 && argv[1] && argv[2] && !argv[2][0] && argv[3])
 	{
 		std::cout << "Error: wrong arguments" << std::endl;
 		return (1);
 	}
-	std::ifstream myfile;
-	std::string filename;
+	file.open(filename);
 	filename.append(argv[1]);
-	std::string str1;
-	str1.append(argv[2]);
-	std::string str2;
-	str2.append(argv[3]);
-	myfile.open(filename);
-	if (!myfile)
+	str.append(argv[2]);
+	streplace.append(argv[3]);
+	if (!file)
 	{
 		std::cout << "Unable to open file" << std::endl;
 		exit (1);
 	}
-	std::ofstream outfile;
-	char mychar;
 	outfile.open(filename + ".replace");
-	std::string mystring;
-	size_t i = 0;
-	size_t j = 0;
-	while (myfile.good())
+	while (file.good())
 	{
-		mychar = myfile.get();
+		mychar = file.get();
 		if (mychar == -1)
 			break;
 		mystring.push_back(mychar);
@@ -50,7 +51,7 @@ int main(int argc, char **argv)
 	mystring += '\0';
 	while (mystring[0] && mystring[j])
 	{
-		j = mystring.find(str1);
+		j = mystring.find(str);
 		if (j == std::string::npos)
 			j = mystring.length();
 		while (i < j)
@@ -62,11 +63,11 @@ int main(int argc, char **argv)
 		}
 		if (j == mystring.length())
 			break;
-		outfile << str2;
-		mystring = mystring.substr(j + str1.length());
+		outfile << streplace;
+		mystring = mystring.substr(j + str.length());
 		j = 0;
 		i = 0;
 	}
 	outfile.close();
-	myfile.close();
+	file.close();
 }
