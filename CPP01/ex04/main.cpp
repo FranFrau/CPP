@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 17:40:55 by ffrau             #+#    #+#             */
-/*   Updated: 2022/05/30 10:02:04 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/05/30 10:11:19 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ int main(int argc, char **argv)
 	size_t j = 0;
 	char mychar;
 	
-	if (argc == 4 && argv[1] && argv[2] && !argv[2][0] && argv[3])
+	if (argc != 4 || (argv[1] && argv[2] && !argv[2][0] && argv[3]))
 	{
-		std::cout << "Error: wrong arguments" << std::endl;
+		std::cout << "Error: wrong arguments. Use ./replace <fileName> <stringReplaced> <stringToReplace>" << std::endl;
 		return (1);
 	}
-	file.open(filename);
 	filename.append(argv[1]);
+	file.open(filename);
 	str.append(argv[2]);
 	streplace.append(argv[3]);
 	if (!file)
 	{
-		std::cout << "Unable to open file" << std::endl;
+		std::cout << "Error: no such file or directory" << std::endl;
 		exit (1);
 	}
 	outfile.open(filename + ".replace");
