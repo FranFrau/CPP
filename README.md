@@ -32,7 +32,7 @@
 			<a href="https://github.com/FranFrau/CPP/tree/master/CPP01">01</a>
 		</td>
 		<td>
-			WIP
+			1
 		</td>
 		<td>
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP01.pdf">Subject</a>
@@ -46,13 +46,13 @@
 			<a href="https://github.com/FranFrau/CPP/tree/master/CPP02">02</a>
 		</td>
 		<td>
-			0
+			WIP
 		</td>
 		<td>
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP02.pdf">Subject</a>
 		</td>
 		<td>
-			LINKIMG
+			<img src="https://badge42.vercel.app/api/v2/cl3fwxmuu002509l4a9fnzm1a/project/2605087" alt="ffrau's 42 CPP Module 02 Score" />
 		</td>
 	</tr>
 	<tr>
