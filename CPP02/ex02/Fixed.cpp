@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 11:51:54 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/02 09:45:29 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/02 10:08:25 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Fixed::Fixed(Fixed &fixed)
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed &fixed)
@@ -53,7 +53,6 @@ Fixed& Fixed::operator=(const Fixed &fixed)
 	_numberValue = fixed.getRawBits();
 	return (*this);
 }
-
 
 int	Fixed::getRawBits(void) const
 {
@@ -78,4 +77,110 @@ float	Fixed::toFloat(void) const
 std::ostream& operator<<(std::ostream & os, Fixed const & i)
 {
 	return(os << (i.toFloat()));
+}
+
+Fixed & Fixed::operator++ () //++a
+{
+	_numberValue++;
+	return(*this);
+}
+
+Fixed Fixed::operator++ (int) //a++
+{
+	Fixed temp = *this;
+	++*this;
+	return(temp);
+}
+
+Fixed & Fixed::operator-- () //--a
+{
+	_numberValue--;
+	return(*this);
+}
+
+Fixed Fixed::operator-- (int) //a--
+{
+	Fixed temp = *this;
+	--*this;
+	return(temp);
+}
+
+Fixed Fixed::operator* (const Fixed &fixed)
+{
+	Fixed ret;
+
+	ret.setRawBits(((this->_numberValue) * (fixed._numberValue)) >> 8);
+	return(ret);
+}
+
+Fixed Fixed::operator/ (const Fixed &fixed)
+{
+	Fixed ret(this->toFloat() / fixed.toFloat());
+	return(ret);
+}
+
+Fixed Fixed::operator- (const Fixed &fixed)
+{
+	Fixed ret;
+
+	ret.setRawBits(_numberValue - fixed._numberValue);
+	return(ret);
+}
+
+Fixed Fixed::operator+ (const Fixed &fixed)
+{
+	Fixed ret;
+
+	ret.setRawBits(_numberValue + fixed._numberValue);
+	return(ret);
+}
+
+bool Fixed::operator== (const Fixed &fixed)
+{
+	return(_numberValue == fixed._numberValue);
+}
+
+bool Fixed::operator<= (const Fixed &fixed)
+{
+	return(_numberValue <= fixed._numberValue);
+}
+
+bool Fixed::operator< (const Fixed &fixed)
+{
+	return(_numberValue < fixed._numberValue);
+}
+
+bool Fixed::operator> (const Fixed &fixed)
+{
+	return(_numberValue > fixed._numberValue);
+}
+
+bool Fixed::operator>= (const Fixed &fixed)
+{
+	return(_numberValue >= fixed._numberValue);
+}
+
+bool Fixed::operator!= (const Fixed &fixed)
+{
+	return(_numberValue != fixed._numberValue);
+}
+
+Fixed & Fixed::max(Fixed &a, Fixed &b)
+{
+	return(a._numberValue > b._numberValue ? a : b);
+}
+
+Fixed & Fixed::min(Fixed &a, Fixed &b)
+{
+	return(a._numberValue < b._numberValue ? a : b);
+}
+
+const Fixed & Fixed::max(Fixed const &a, Fixed const &b)
+{
+	return(a._numberValue > b._numberValue ? a : b);
+}
+
+const Fixed & Fixed::min(Fixed const &a, Fixed const &b)
+{
+	return(a._numberValue < b._numberValue ? a : b);
 }
