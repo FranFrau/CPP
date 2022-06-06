@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 16:50:07 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/06 17:31:27 by ffrau            ###   ########.fr       */
+/*   Created: 2022/06/06 16:50:32 by ffrau             #+#    #+#             */
+/*   Updated: 2022/06/06 17:34:48 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #define RED "\033[31m"
 #define NONE "\033[0m"
+#define CYAN "\033[36m"
+#define YELLOW "\033[33m"
 
 class	ClapTrap
 {

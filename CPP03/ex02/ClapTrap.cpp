@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:50:00 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/06 17:03:38 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/06 17:02:10 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap() : _hitPoints(this->_maxHitPoints), _energyPoints(this->_maxEnergyPoints), _attackDamage(this->_maxAttackDamage)
 {
-	this->_name = "ppunzo"; //This is a tradition started by vbeffa. Check his github (valeriobeffa)
+	this->_name = "ppunzo";
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -45,7 +45,6 @@ void	ClapTrap::attack(const std::string& target)
 	}
 	else
 		this->_energyPoints--;
-
 	this->_attackDamage += 1;
 	std::cout << "ClapTrap " << getName() << " attacks " << target
 	<< ", causing " << getAttackDamage() << " points of damage!" << std::endl;

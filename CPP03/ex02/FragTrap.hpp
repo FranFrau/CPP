@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:39:32 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/06 17:05:50 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/06 17:05:56 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 	private:
-		bool				_isInKeeperMode;
 		static const int	_maxHitPoints = 100;
-		static const int	_maxEnergyPoints = 50;
-		static const int	_maxAttackDamage = 20;
+		static const int	_maxEnergyPoints = 100;
+		static const int	_maxAttackDamage = 30;
 	public:
-		void	guardGate();
-		void	attack(std::string const & target);
-		bool	getKeeperMode();
-		void	setKeeperMode(bool keeper);
+		void	highFivesGuys(void);
 		
-		ScavTrap();
-		ScavTrap(ScavTrap& clapTrap);
-		ScavTrap(std::string name);
-		~ScavTrap();
-		ScavTrap& operator=(ScavTrap& equals);
+		FragTrap();
+		FragTrap(FragTrap& clapTrap);
+		FragTrap(std::string name);
+		~FragTrap();
+		FragTrap& operator=(FragTrap& equals);
 };
 
 #endif

@@ -6,19 +6,20 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 17:40:19 by ltorrean          #+#    #+#             */
-/*   Updated: 2022/06/06 17:31:32 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/06 17:31:03 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void )
 {
 	std::cout << RED << "**** Constructor ****" << NONE << std::endl;
-	ClapTrap a("Pippo");
-	ClapTrap b;
-	ScavTrap c("Pluto");
-	ScavTrap d("vbeffa");
+	ScavTrap a("Pippo");
+	ScavTrap b;
+	FragTrap c("Pluto");
+	FragTrap d("vbeffa");
 
 	std::cout << RED << "**** Testing ****  " << NONE << std::endl;
 
@@ -35,7 +36,9 @@ int main( void )
 	b.beRepaired(3);
 	c.beRepaired(4);
 
-	d.guardGate();
-	d.guardGate();
+	a.guardGate();
+	a.guardGate();
+
+	d.highFivesGuys();
 	std::cout << RED << "**** Destructor ****" << NONE << std::endl;
 }
