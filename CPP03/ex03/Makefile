@@ -6,11 +6,11 @@
 #    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:52:34 by ffrau             #+#    #+#              #
-#    Updated: 2022/06/06 18:20:45 by ffrau            ###   ########.fr        #
+#    Updated: 2022/06/06 18:21:07 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= ScavTrap
+NAME			= DiamondTrap
 
 CC				= clang++
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
@@ -18,6 +18,8 @@ CFLAGS			= -Wall -Wextra -Werror -std=c++98
 SRCS			=	main.cpp		\
 					ClapTrap.cpp	\
 					ScavTrap.cpp	\
+					FragTrap.cpp	\
+					DiamondTrap.cpp	\
 
 OBJ				= $(SRCS:.cpp=.o)
 

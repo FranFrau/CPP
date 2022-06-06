@@ -6,11 +6,11 @@
 #    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:52:34 by ffrau             #+#    #+#              #
-#    Updated: 2022/06/06 17:19:23 by ffrau            ###   ########.fr        #
+#    Updated: 2022/06/06 18:20:51 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= ClapTrap
+NAME			= FragTrap
 
 CC				= clang++
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
