@@ -6,6 +6,9 @@
 class	ClapTrap
 {
 	private:
+		static const int	_maxHitPoints = 10;
+		static const int	_maxEnergyPoints = 10;
+		static const int	_maxAttackDamage = 0;
 		std::string	_name;
 		int			_hitPoints;
 		int			_energyPoints;
@@ -17,6 +20,7 @@ class	ClapTrap
 		int			getHitPoint(void);
 		int			getEnergyPoint(void);
 		int			getAttackDamage(void);
+		void		addEnergyPoint(int value);
 		std::string	getName(void);
 
 		ClapTrap();
@@ -25,6 +29,5 @@ class	ClapTrap
 		~ClapTrap();
 		ClapTrap& operator=(ClapTrap& equals);
 };
-
 
 #endif

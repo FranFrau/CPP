@@ -6,25 +6,25 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:50:00 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/04 18:13:16 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/06 12:14:52 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap() : _hitPoints(this->_maxHitPoints), _energyPoints(this->_maxEnergyPoints), _attackDamage(this->_maxAttackDamage)
 {
 	this->_name = "ppunzo"; //This is a tradition started by vbeffa. Check his github (valeriobeffa)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap& clapTrap) : _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(ClapTrap& clapTrap) : _hitPoints(this->_maxHitPoints), _energyPoints(this->_maxEnergyPoints), _attackDamage(this->_maxAttackDamage)
 {
 	*this = clapTrap;
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(std::string name) : _hitPoints(this->_maxHitPoints), _energyPoints(this->_maxEnergyPoints), _attackDamage(this->_maxAttackDamage)
 {
 	this->_name = name;
 	std::cout << "Name constructor called" << std::endl;
@@ -38,27 +38,59 @@ ClapTrap::~ClapTrap()
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (getEnergyPoint() == 1)
-		this->_energyPoints = 0;
-	else
+	if (getEnergyPoint())
 		this->_energyPoints--;
+	else
+	{
+		std::cout << "No energy point left" << std::endl;
+		return ;
+	}
+	this->_attackDamage += 1;
 	std::cout << "ClapTrap " << getName() << " attacks " << target
 	<< ", causing " << getAttackDamage() << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
+	if (getHitPoint() <= 0)
+	{
+		std::cout << "You already died" << std::endl;
+		return ;
+	}
+
 	if ((int) amount > getHitPoint())
 		this->_hitPoints = 0;
 	else
 		this->_hitPoints -= amount;
+
     std::cout << this->_name << " takes " << amount << " damage points! " << getHitPoint() << " HP remaining" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	this->_hitPoints += amount;
+	if (getEnergyPoint())
+		this->_energyPoints--;
+	else
+	{
+		std::cout << "No energy point left" << std::endl;
+		return ;
+	}
+
+	if ((this->_hitPoints + amount) > this->_maxHitPoints)
+		this->_hitPoints = this->_maxHitPoints;
+	else
+		this->_hitPoints += amount;
+
     std::cout << this->_name << " gained " << amount << " HP points! " << getHitPoint() << " remaining " << std::endl;
+}
+
+void	ClapTrap::addEnergyPoint(int value)
+{
+	if (value > this->_maxEnergyPoints)
+		this->_energyPoints = _maxEnergyPoints;
+	else
+		this->_energyPoints = value;
+	std::cout << "Energy points filled, now you have " << getEnergyPoint() << " energy points" << std::endl;
 }
 
 int	ClapTrap::getHitPoint(void)
