@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:50:52 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/06 18:29:39 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/07 12:47:38 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ScavTrap::attack(const std::string& target)
 	this->_attackDamage += 1;
 	std::cout << "ScavTrap " << getName() << " attacks " << target
 	<< ", causing " << getAttackDamage() << " points of damage!" 
-	<< std::endl << "Energy points left: " << getEnergyPoint() << std::endl;
+	<< std::endl;
 }
 
 bool	ScavTrap::getKeeperMode()

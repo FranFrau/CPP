@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:39:32 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/06 18:37:16 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/07 11:10:25 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : virtual ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	private:
 		bool				_isInKeeperMode;

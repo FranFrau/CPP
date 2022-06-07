@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:39:32 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/06 18:36:40 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/07 12:33:38 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,16 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
 		std::string	_name;
+		int			_maxEnergyPoints;
+		int			_energyPoints;
 	public:
 		void	guardGate();
 		void	attack(std::string const & target);
+		int		getMaxEnergyPoints(void);
+		int		getEnergyPoint(void);
 		bool	getKeeperMode();
 		void	setKeeperMode(bool keeper);
+		// void	whoAmI();
 		
 		DiamondTrap();
 		DiamondTrap(DiamondTrap& clapTrap);

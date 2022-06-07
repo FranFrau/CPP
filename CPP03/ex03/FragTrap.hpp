@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:39:32 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/06 18:37:22 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/07 11:08:28 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : virtual ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	private:
 		static const int	_maxHitPoints = 100;
