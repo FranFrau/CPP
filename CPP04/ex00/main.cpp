@@ -5,46 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 17:40:19 by ltorrean          #+#    #+#             */
-/*   Updated: 2022/06/08 12:42:40 by ffrau            ###   ########.fr       */
+/*   Created: 2022/06/08 11:47:23 by ffrau             #+#    #+#             */
+/*   Updated: 2022/06/08 12:47:26 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
+#include "Dog.hpp"
 
-int main( void )
+#define RED "\033[31m"
+#define NONE "\033[0m"
+
+int main()
 {
 	std::cout << RED << "**** Constructor ****" << NONE << std::endl;
-	ScavTrap a("Pippo");
-	ScavTrap b;
-	FragTrap c("Pluto");
-	FragTrap d("vbeffa");
-	DiamondTrap	e("Carlo");
-	DiamondTrap	f("Zendo");
-
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	const WrongAnimal* evilAldo = new WrongAnimal();
+	const WrongAnimal* evilCat = new WrongCat();
+	
 	std::cout << RED << "**** Testing ****  " << NONE << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	evilAldo->makeSound();
+	evilCat->makeSound();
 
-	a.attack(b.getName());
-	b.takeDamage(a.getAttackDamage());
-
-	b.attack(c.getName());
-	c.takeDamage(b.getAttackDamage());
-
-	d.attack(a.getName());
-	a.takeDamage(d.getAttackDamage());
-
-	a.beRepaired(2);
-	b.beRepaired(3);
-	c.beRepaired(4);
-
-	a.guardGate();
-	a.guardGate();
-
-	d.highFivesGuys();
-
-	f.attack(e.getName());
-	e.takeDamage(f.getAttackDamage());
-
-	f.whoAmI();
 	std::cout << RED << "**** Destructor ****" << NONE << std::endl;
+	delete meta;
+	delete j;
+	delete i;
+	delete evilAldo;
+	delete evilCat;
 }

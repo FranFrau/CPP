@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 12:39:32 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/08 12:43:39 by ffrau            ###   ########.fr       */
+/*   Created: 2022/06/08 11:41:39 by ffrau             #+#    #+#             */
+/*   Updated: 2022/06/08 12:24:50 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
 
-class FragTrap : public ClapTrap
+class Dog : public Animal
 {
-	private:
-		static const int	_maxHitPoints = 100;
-		static const int	_maxEnergyPoints = 100;
-		static const int	_maxAttackDamage = 30;
 	public:
-		void	highFivesGuys(void);
-		
-		FragTrap();
-		FragTrap(FragTrap& fragTrap);
-		FragTrap(std::string name);
-		~FragTrap();
-		FragTrap& operator=(FragTrap& equals);
+		void	makeSound(void) const;
+
+		Dog();
+		Dog(Dog &dog);
+		~Dog();
+
+		Dog &operator=(Dog &equals);
 };
 
 #endif

@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 12:39:32 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/08 12:43:39 by ffrau            ###   ########.fr       */
+/*   Created: 2022/06/08 11:27:27 by ffrau             #+#    #+#             */
+/*   Updated: 2022/06/08 12:18:56 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "ClapTrap.hpp"
+#include <iostream>
 
-class FragTrap : public ClapTrap
+class Animal
 {
-	private:
-		static const int	_maxHitPoints = 100;
-		static const int	_maxEnergyPoints = 100;
-		static const int	_maxAttackDamage = 30;
+	protected:
+		std::string type;
 	public:
-		void	highFivesGuys(void);
-		
-		FragTrap();
-		FragTrap(FragTrap& fragTrap);
-		FragTrap(std::string name);
-		~FragTrap();
-		FragTrap& operator=(FragTrap& equals);
+		void			setType(std::string animalType);
+		virtual void	makeSound(void) const;
+		std::string		getType(void) const;
+
+		Animal();
+		Animal(Animal &animal);
+		virtual ~Animal();
+		Animal& operator=(Animal &equals);
 };
 
 #endif

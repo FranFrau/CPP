@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:39:32 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/07 11:08:28 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/08 12:43:39 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class FragTrap : virtual public ClapTrap
 		int		getMaxHitPoint(void);
 		
 		FragTrap();
-		FragTrap(FragTrap& clapTrap);
+		FragTrap(FragTrap& fragTrap);
 		FragTrap(std::string name);
 		~FragTrap();
 		FragTrap& operator=(FragTrap& equals);

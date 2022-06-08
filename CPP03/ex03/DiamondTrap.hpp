@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:39:32 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/07 12:33:38 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/08 12:43:10 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		int		getEnergyPoint(void);
 		bool	getKeeperMode();
 		void	setKeeperMode(bool keeper);
-		// void	whoAmI();
+		void	whoAmI();
 		
 		DiamondTrap();
-		DiamondTrap(DiamondTrap& clapTrap);
+		DiamondTrap(DiamondTrap& diamondTrap);
 		DiamondTrap(std::string name);
 		~DiamondTrap();
 		DiamondTrap& operator=(DiamondTrap& equals);

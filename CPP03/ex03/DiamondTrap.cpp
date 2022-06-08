@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:32:12 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/07 12:48:07 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/08 12:41:49 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,9 @@ void	DiamondTrap::attack(std::string const & target)
 	else
 		this->_energyPoints--;
 	ScavTrap::attack(target);
+}
+
+void	DiamondTrap::whoAmI()
+{
+	std::cout << "My name is " << this->_name << " and my ClapTrap name is " << ClapTrap::_name + "_clap_name" << std::endl;
 }

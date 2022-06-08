@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 12:39:32 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/07 11:10:25 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/08 12:44:07 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class ScavTrap : virtual public ClapTrap
 		bool	getKeeperMode();
 		
 		ScavTrap();
-		ScavTrap(ScavTrap& clapTrap);
+		ScavTrap(ScavTrap& scavTrap);
 		ScavTrap(std::string name);
 		~ScavTrap();
 		ScavTrap& operator=(ScavTrap& equals);

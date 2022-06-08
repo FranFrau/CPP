@@ -60,13 +60,13 @@
 			<a href="https://github.com/FranFrau/CPP/tree/master/CPP03">03</a>
 		</td>
 		<td>
-			WIP
+			Valutation needed
 		</td>
 		<td>
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP03.pdf">Subject</a>
 		</td>
 		<td>
-			LINKIMG
+			Work in progress
 		</td>
 	</tr>
 	<tr>
@@ -74,13 +74,13 @@
 			<a href="https://github.com/FranFrau/CPP/tree/master/CPP04">04</a>
 		</td>
 		<td>
-			0
+			WIP
 		</td>
 		<td>
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP04.pdf">Subject</a>
 		</td>
 		<td>
-			LINKIMG
+			Work in progress
 		</td>
 	</tr>
 	<tr>
@@ -94,7 +94,7 @@
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP05.pdf">Subject</a>
 		</td>
 		<td>
-			LINKIMG
+			Work in progress
 		</td>
 	</tr>
 	<tr>
@@ -108,7 +108,7 @@
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP06.pdf">Subject</a>
 		</td>
 		<td>
-			LINKIMG
+			Work in progress
 		</td>
 	</tr>
 	<tr>
@@ -122,7 +122,7 @@
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP07.pdf">Subject</a>
 		</td>
 		<td>
-			LINKIMG
+			Work in progress
 		</td>
 	</tr>
 	<tr>
@@ -136,7 +136,7 @@
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP08.pdf">Subject</a>
 		</td>
 		<td>
-			LINKIMG
+			Work in progress
 		</td>
 	</tr>
 </table>
