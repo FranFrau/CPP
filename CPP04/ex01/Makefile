@@ -6,7 +6,7 @@
 #    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:52:34 by ffrau             #+#    #+#              #
-#    Updated: 2022/06/09 14:03:20 by ffrau            ###   ########.fr        #
+#    Updated: 2022/06/10 10:56:38 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-run:			$(NAME)
+run:			all
 				./$(NAME)
 				make fclean -C ./
 

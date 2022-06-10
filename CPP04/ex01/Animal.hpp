@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 11:27:27 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/09 21:37:56 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/10 10:55:43 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Animal
 		void				setType(std::string animalType);
 		virtual void		makeSound(void) const;
 		std::string			getType(void) const;
-		virtual Brain		*getBrain();
 
 		Animal();
 		Animal(Animal &animal);
