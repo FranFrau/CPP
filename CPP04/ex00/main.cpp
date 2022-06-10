@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
+/*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 11:47:23 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/08 12:47:26 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/10 14:22:42 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #define RED "\033[31m"
 #define NONE "\033[0m"
+#define GREEN "\033[32m"
 
 int main()
 {
@@ -27,9 +28,12 @@ int main()
 	const WrongAnimal* evilCat = new WrongCat();
 	
 	std::cout << RED << "**** Testing ****  " << NONE << std::endl;
+	std::cout << GREEN << "**** Types ****  " << NONE << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	
+	std::cout << GREEN << "**** Sounds ****  " << NONE << std::endl;
+	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
 	evilAldo->makeSound();
