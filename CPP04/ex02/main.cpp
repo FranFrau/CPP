@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 11:47:23 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/10 16:04:58 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/10 16:10:49 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ int main()
 	delete evilAldo;
 	delete evilCat;
 
-	Animal	*animalerror = new Animal();
+	// Animal	*animalerror = new Animal();
 }
