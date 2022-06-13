@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 15:33:50 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/11 15:41:12 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/13 16:19:42 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 AMateria::AMateria()
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->_type = "{PlaceHolder}";
+	this->_type = "ppunzo";
 }
 
 AMateria::AMateria(AMateria &copy)
@@ -44,4 +44,9 @@ AMateria &AMateria::operator=(AMateria &equals)
 std::string const& AMateria::getType() const
 {
 	return (this->_type);
+}
+
+void AMateria::use(ICharacter& target)
+{
+	(void)target;
 }
