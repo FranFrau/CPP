@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 11:47:23 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/10 16:10:49 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/14 11:39:53 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ int main()
 
 	std::cout << GREEN << "**** Ideas ****  " << NONE << std::endl;
 	cat->getBrain()->getIdea(1);
-
-	std::cout << std::endl;
 
 	std::cout << RED << "**** Destructor ****" << NONE << std::endl;
 	delete dog;

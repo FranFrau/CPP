@@ -6,7 +6,7 @@
 #    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:52:34 by ffrau             #+#    #+#              #
-#    Updated: 2022/06/13 16:20:43 by ffrau            ###   ########.fr        #
+#    Updated: 2022/06/14 11:37:58 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ OBJ				= $(SRCS:.cpp=.o)
 
 %.o:			%.cpp
 				@$(CC) $(CFLAGS) -g -c $< -o $@
-				@echo .
 
 RM				= rm -rf
 
@@ -44,7 +43,7 @@ fclean:			clean
 re:				fclean $(NAME)
 
 run:			all
-				./$(NAME)
+				@./$(NAME)
 				make fclean -C ./
 
 leaks:			$(NAME)

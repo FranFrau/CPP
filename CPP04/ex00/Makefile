@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+         #
+#    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:52:34 by ffrau             #+#    #+#              #
-#    Updated: 2022/06/08 12:48:48 by ffrau            ###   ########.fr        #
+#    Updated: 2022/06/14 11:39:03 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS			=	main.cpp		\
 OBJ				= $(SRCS:.cpp=.o)
 
 %.o:			%.cpp
-				$(CC) $(CFLAGS) -g -c $< -o $@
+				@$(CC) $(CFLAGS) -g -c $< -o $@
 
 RM				= rm -rf
 
