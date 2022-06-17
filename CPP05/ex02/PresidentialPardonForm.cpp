@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 21:01:27 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/17 12:19:20 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/17 15:19:35 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 	return (*this);
 }
 
-void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
+bool	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	try
 	{
@@ -53,10 +53,13 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	catch(const FormNotSignedException &e)
 	{
 		std::cout << this->getName() << e.what() << std::endl;
+		return (false);
 	}
 	catch(const GradeTooLowException &ex)
 	{
 		std::cout << ex.what() << std::endl;
+		return (false);
 	}
-	std::cout << this->_target << " has been executed by " << executor.getName() << std::endl;
+	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	return (true);
 }

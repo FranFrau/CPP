@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:22:57 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/16 23:24:08 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/17 15:23:00 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ class Form
 		int				getGradeRequiredToExecute() const; 
 		void			setSigned(bool sign);
 		void			beSigned(Bureaucrat &bb);
-		virtual void	execute(Bureaucrat const & executor) const = 0;
+		virtual bool	execute(Bureaucrat const & executor) const = 0;
 		
 		class GradeTooHighException : public std::exception{
 			public:
 				virtual const char * what () const throw () {
-					return "Grade too high gg";
+					return "Grade too high";
 				}
 		};
 		class GradeTooLowException : public std::exception{
 			public:
 				virtual const char * what () const throw () {
-					return "Grade too low gg";
+					return "Grade too low";
 				}
 		};
 		class FormAlreadySignedException : public std::exception{

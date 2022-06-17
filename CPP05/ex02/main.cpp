@@ -26,7 +26,7 @@ int main()
 
 	try
 	{
-		Bureaucrat Aldo("Aldo", 75);
+		Bureaucrat Aldo("Aldo", 150);
 		c = Aldo;
 	}
 	catch(const std::exception& e)
@@ -35,7 +35,7 @@ int main()
 	}
 	try
 	{
-		Bureaucrat Francesco("Francesco", 150);
+		Bureaucrat Francesco("Francesco", 43);
 		b = Francesco;
 	}
 	catch(const std::exception& e)
@@ -56,26 +56,32 @@ int main()
 	std::cout << g;
 	std::cout << std::endl << CYAN << "**** Testing ****  " << NONE << std::endl << std::endl;
 
-	a.executeForm(e);
 	b.executeForm(e);
 	std::cout << std::endl;
 	a.signForm(e);
 	b.signForm(e);
 	c.signForm(e);
 	std::cout << std::endl;
+	a.executeForm(e);
+	b.executeForm(e);
+	std::cout << std::endl;
 	a.executeForm(f);
-	b.executeForm(f);
 	std::cout << std::endl;
 	c.signForm(f);
 	a.signForm(f);
 	b.signForm(f);
 	std::cout << std::endl;
-	a.executeForm(g);
+	a.executeForm(f);
+	b.executeForm(f);
+	std::cout << std::endl;
 	b.executeForm(g);
 	std::cout << std::endl;
 	c.signForm(g);
 	a.signForm(g);
 	b.signForm(g);
+	std::cout << std::endl;
+	a.executeForm(g);
+	b.executeForm(g);
 	std::cout << std::endl;
 
 	std::cout << std::endl << RED << "**** Destructor ****" << NONE << std::endl << std::endl;

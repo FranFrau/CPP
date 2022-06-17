@@ -6,7 +6,7 @@
 #    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:52:34 by ffrau             #+#    #+#              #
-#    Updated: 2022/06/17 12:30:22 by ffrau            ###   ########.fr        #
+#    Updated: 2022/06/17 15:14:06 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ all:			$(NAME)
 
 clean:
 				$(RM) $(OBJ)
-				$(RM) *_shrubbery
 
 fclean:			clean
 				$(RM) $(NAME)

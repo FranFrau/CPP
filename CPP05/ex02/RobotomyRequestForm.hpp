@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:56:15 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/17 12:20:28 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/17 15:18:14 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class RobotomyRequestForm : public Form
 	private:
 		std::string	_target;
 	public:
-		void	execute(Bureaucrat const & executor) const;
+		bool	execute(Bureaucrat const & executor) const;
 
 		RobotomyRequestForm();
 		RobotomyRequestForm(std::string target);

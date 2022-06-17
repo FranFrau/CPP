@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:13:23 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/17 11:37:11 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/17 15:20:54 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,16 +92,8 @@ void	Bureaucrat::signForm(Form &f)
 
 void	Bureaucrat::executeForm(Form & form) const
 {
-	try
-	{
-		form.execute(*this);
+	if (form.execute(*this))
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	
 }
 
 std::ostream& operator<<(std::ostream& out, Bureaucrat& bur)
