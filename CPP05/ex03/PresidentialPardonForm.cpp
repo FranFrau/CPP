@@ -1,51 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 21:01:27 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/17 19:23:26 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/17 15:19:35 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
-#include <cstdlib>
-#include <random>
+#include "PresidentialPardonForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm.txt", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm() : Form("Presidential.txt", 25, 5)
 {
 	this->_target = "ppunzo";
 	std::cout << "Default constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm.txt", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presidential.txt", 25, 5)
 {
 	this->_target = target;
 	std::cout << "Default constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &copy) : Form(copy)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &copy) : Form(copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
-RobotomyRequestForm::~RobotomyRequestForm()
+PresidentialPardonForm::~PresidentialPardonForm()
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
-RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm &equals)
+PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm &equals)
 {
 	this->_target = equals._target;
 	return (*this);
 }
 
-bool	RobotomyRequestForm::execute(Bureaucrat const & executor) const
+bool	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	std::srand((unsigned int)std::time(NULL));
 	try
 	{
 		if (!this->isSigned())
@@ -63,10 +60,6 @@ bool	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		std::cout << ex.what() << std::endl;
 		return (false);
 	}
-	
-	if (std::rand() % 2)
-		std::cout << "DRILLLLLLLLL" << this->_target << " has been robotomized successfully 50% of the time" << std::endl;
-	else
-		std::cout << "robotomy failed DRILLLLLLLLL" << std::endl;
+	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 	return (true);
 }

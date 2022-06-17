@@ -1,57 +1,69 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 21:01:27 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/17 19:23:26 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/17 15:18:51 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
-#include <cstdlib>
-#include <random>
+#include "ShrubberyCreationForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("RobotomyRequestForm.txt", 72, 45)
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm.txt", 145, 137)
 {
 	this->_target = "ppunzo";
 	std::cout << "Default constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm.txt", 72, 45)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm.txt", 145, 137)
 {
 	this->_target = target;
 	std::cout << "Default constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &copy) : Form(copy)
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &copy) : Form(copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
-RobotomyRequestForm::~RobotomyRequestForm()
+ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
-RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm &equals)
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &equals)
 {
 	this->_target = equals._target;
 	return (*this);
 }
 
-bool	RobotomyRequestForm::execute(Bureaucrat const & executor) const
+bool	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	std::srand((unsigned int)std::time(NULL));
 	try
 	{
 		if (!this->isSigned())
 			throw FormNotSignedException();
 		if (executor.getGrade() > this->getGradeRequiredToExecute())
 			throw GradeTooLowException();
+		std::ofstream myfile(_target + "_shrubbery");
+			myfile
+			<< "          &&& &&  & &&" << std::endl
+			<< "      && &\\/&\\|& ()|/ @, &&" << std::endl
+			<< "      &\\/(/&/&||/& /_/)_&/_&" << std::endl
+			<< "   &() &\\/&|()|/&\\/ '%\" & ()" << std::endl
+			<< "  &_\\_&&_\\ |& |&&/&__%_/_& &&" << std::endl
+			<< "&&   && & &| &| /& & % ()& /&&" << std::endl
+			<< " ()&_---()&\\&\\|&&-&&--%---()~" << std::endl
+			<< "     &&     \\|||" << std::endl
+			<< "             |||" << std::endl
+			<< "             |||" << std::endl
+			<< "             |||" << std::endl
+			<< "       , -=-~  .-^- _" << std::endl
+			<< "              `" << std::endl;
 	}
 	catch(const FormNotSignedException &e)
 	{
@@ -63,10 +75,17 @@ bool	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		std::cout << ex.what() << std::endl;
 		return (false);
 	}
-	
-	if (std::rand() % 2)
-		std::cout << "DRILLLLLLLLL" << this->_target << " has been robotomized successfully 50% of the time" << std::endl;
-	else
-		std::cout << "robotomy failed DRILLLLLLLLL" << std::endl;
 	return (true);
 }
+
+
+
+
+
+
+
+
+
+
+
+
