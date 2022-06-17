@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:13:23 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/16 23:27:28 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/17 11:37:11 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 
 Bureaucrat::Bureaucrat(Bureaucrat &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()

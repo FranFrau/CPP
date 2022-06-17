@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:31:17 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/16 21:52:40 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/17 12:14:44 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ Form::Form() : _name("ppunzo.txt"), _signed(false), _gradeRequireToSign(1), _gra
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false), _gradeRequireToSign(gradeToSign), _gradeRequireToExecute(gradeToExecute)
 {
+	if (gradeToExecute > MIN_GRADE || gradeToSign > MIN_GRADE)
+		throw GradeTooLowException();
+	if (gradeToExecute < MAX_GRADE || gradeToSign < MAX_GRADE)
+		throw GradeTooHighException();
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -74,28 +78,34 @@ void	Form::setSigned( bool sig )
 	this->_signed = sig;
 }
 
-void	Form::beSigned( Bureaucrat &bb ) 
+void	Form::beSigned( Bureaucrat &bur ) 
 {
 	try
 	{
-		if (bb.getGrade() > this->getGradeRequiredToSign())
+		if (this->getGradeRequiredToSign() < bur.getGrade())
+		{
 			throw GradeTooLowException();
+			return ;
+		}
 		try
 		{
 			if (this->isSigned())
+			{
 				throw FormAlreadySignedException();
+				return ;
+			}
 			this->setSigned(true);
-			std::cout << bb.getName() << " signed " << this->getName() << std::endl;
+			std::cout << bur.getName() << " signed " << this->getName() << std::endl;
 		}
 		catch(const FormAlreadySignedException &ex)
 		{
 			std::cout << this->getName() << ex.what() << std::endl;
-			return;
+			return ;
 		}
 	}
 	catch(GradeTooLowException &e)
 	{
-		std::cout << bb.getName() << " couldn't sign " << this->getName() << " because " << e.what() << std::endl;
+		std::cout << bur.getName() << " couldn't sign " << this->getName() << " because " << e.what() << std::endl;
 	}
 	
 }
