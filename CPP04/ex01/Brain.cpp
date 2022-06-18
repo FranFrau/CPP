@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:48:00 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/09 15:35:10 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/18 18:33:02 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,16 @@ void	Brain::setIdeas(std::string idea)
 	}
 	this->_ideas[this->_nideas] = idea;
 	this->_nideas++;
+}
+
+void	Brain::setIdea(std::string idea, unsigned int index)
+{
+	if (index > 100)
+	{
+		std::cout << "Your brain in so small. I will replace with the first one" << std::endl;
+		index = 0;
+	}
+	this->_ideas[index] = idea;
 }
 
 std::string	Brain::getIdea(int index)

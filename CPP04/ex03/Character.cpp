@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:27:14 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/13 16:24:19 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/18 19:01:18 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,9 @@ void Character::use(int i, ICharacter& target)
 void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
-		if (materie[i] == NULL)
+		if (!materie[i])
 		{
-			std::cout << m->getType() << " equipped at index " << i << std::endl;
-			materie[i] = m->clone();
+			materie[i] = m;
 			return ;
 		}
 }

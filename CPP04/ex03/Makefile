@@ -6,7 +6,7 @@
 #    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 15:52:34 by ffrau             #+#    #+#              #
-#    Updated: 2022/06/14 11:37:58 by ffrau            ###   ########.fr        #
+#    Updated: 2022/06/18 19:02:33 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,11 +42,11 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-run:			all
+run:			re
 				@./$(NAME)
 				make fclean -C ./
 
-leaks:			$(NAME)
+leaks:			re
 				leaks --atExit -- ./$(NAME)
 				make fclean -C ./
 

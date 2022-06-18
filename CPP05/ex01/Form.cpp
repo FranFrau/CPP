@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:31:17 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/16 20:48:44 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/18 20:13:26 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ Form::Form() : _name("ppunzo.txt"), _signed(false), _gradeRequireToSign(1), _gra
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _signed(false), _gradeRequireToSign(gradeToSign), _gradeRequireToExecute(gradeToExecute)
 {
+	if (this->_gradeRequireToSign > MIN_GRADE || _gradeRequireToExecute > MIN_GRADE)
+		throw GradeTooLowException();
+	if (this->_gradeRequireToSign < MAX_GRADE || this->_gradeRequireToExecute < MAX_GRADE)
+		throw GradeTooHighException();
 	std::cout << "Default constructor called" << std::endl;
 }
 

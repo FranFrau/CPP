@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:23:37 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/13 16:26:03 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/18 19:02:47 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int main()
 	
 	std::cout << RED << "**** Testing ****  " << NONE << std::endl;
 	
+	tmp = src->createMateria("ppunzo");
+	me->equip(tmp);
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");

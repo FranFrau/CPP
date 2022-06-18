@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 11:41:39 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/09 21:38:08 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/18 18:20:43 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ class Cat : public Animal
 	private:
 		Brain	*_brain;
 	public:
-		void	makeSound(void) const;
-		Brain	*getBrain();
+		void		makeSound(void) const;
+		void		setIdea(std::string idea, unsigned int index);
+		void		setIdeas(std::string idea);
+		std::string	getIdea(int index);
+		std::string	*getIdeas();
+		Brain		*getBrain();
 
 		Cat();
 		Cat(Cat &cat);

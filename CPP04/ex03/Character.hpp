@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:25:19 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/13 15:29:11 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/18 18:52:11 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 class Character : public ICharacter
 {
 	protected:
-		std::string name;
-		AMateria*   materie[4];
+		std::string	name;
+		AMateria*	materie[4];
 	public:
 		void				equip(AMateria* m);
 		void				unequip(int idx);
