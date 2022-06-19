@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:36:23 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/17 19:16:07 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/19 14:53:28 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,10 @@ Form	*Intern::makeForm(std::string name, std::string target)
 			form = this->makeShrubberyCreationForm(target);
 			break;
 		default:
-			std::cout << "Wrong args. Kojò" << std::endl;
+			std::cout << "Wrong args. Kojò. The form name passed as parameter doesn’t exist" << std::endl;
 			return NULL;
 			break;
 	}
+	std::cout << "Intern creates " << form->getName() << std::endl;
 	return form;
 }
