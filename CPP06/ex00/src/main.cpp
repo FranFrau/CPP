@@ -5,76 +5,83 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/19 00:13:59 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/19 13:16:55 by ffrau            ###   ########.fr       */
+/*   Created: 2022/06/20 18:35:21 by ffrau             #+#    #+#             */
+/*   Updated: 2022/06/20 18:38:39 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
+#include <sstream>
+#include <iomanip>
+#include <cctype>
 
-bool	endWith(std::string string, std::string end)
+void		convert_int(double n, std::string s)
 {
-	int lengt = end.length() - 1;
-	int strLengt = string.length() - 1;
+	if (n > 2147483647  || n < -2147483648 || !s.find("nan")) 
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << static_cast<int>(n) << std::endl;
+}
 
-	while ((lengt + 1))
+bool ft_control(std::string s)
+{
+	if (s == "nan" || s == "+nan" || s == "-nan" || s == "nanf" || s == "+nanf" || s == "-nanf" ||
+		s == "inf" || s == "+inf" || s == "-inf" || s == "inff" || s == "+inff" || s == "-inff")
+		return 1;
+	return 0;
+}
+
+void		convert_char(double n, std::string s)
+{
+	if (n < 0 || n > 127 || ft_control(s))
+		std::cout << "char: impossible" << std::endl;
+	else if (n > 32 && n < 127)
+		std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
+	else
+		std::cout << "char: Non displayable" << std::endl;
+	convert_int(n, s);
+}
+
+bool ft_check(std::string s)
+{
+	int j = s.length();
+	int dot =  0;
+	if ((s[0] >= '0' && s[0] <= '9') || s[0] == '-' ||  s[0] == '+')
 	{
-		if (string[strLengt] != end[lengt])
-			return (false);
-		lengt--;
-		strLengt--;
+		for (int i = 1; i < j; i++)
+		{
+			if (s[i] == '.')
+				dot++;
+			if (i == j - 1 && s[i] == 'f')
+				return (true);
+			if (dot > 1 || isalpha(s[i]))
+				return (false);
+		}
+		
 	}
+	else
+		return(ft_control(s));
 	return (true);
 }
-
-void	oneChar(std::string input)
+int			main(int ac, char **av)
 {
-	char c = static_cast <char>(input[0]);
-	int i = static_cast <int>(c);
-	std::cout << "Char: ";
-	isdigit(i) ? std::cout << " Not printable" << std::endl : std::cout << " " << c << std::endl;
-	std::cout << "Int: " << i << std::endl;
-	std::cout << "Float: " << i << ".0f" << std::endl;
-	std::cout << "Double: " << i << ".0" << std::endl;
-	exit(0);
-}
+	std::string	s;
+	double		n;
 
-void	doubleConverter(std::string input)
-{
-	std::string pre;
-	std::string post;
-}
-
-void	floatConverter(std::string input)
-{
-	input.pop_back();
-
-	char char_array[input.length() + 1];
-	strcpy(char_array, input.c_str());
-
-	std::cout << input << std::endl;
-	exit(0);
-}
-
-int main(int argc, char **argv)
-{
-	std::string input;
-	if (argc != 2)
+	if (ac != 2)
 	{
-		std::cout << "Usa due variabili cogliò" << std::endl;
-		return 0;
+		std::cout << "Usage: ./convert [string]" << std::endl;
+		return (1);
 	}
-
-	input = std::string(argv[1]);
-	if (input.length() == 1)
-		oneChar(input);
-	if (endWith(input, "f"))
-		floatConverter(input);
-	
-	// char b = input.length() != 1 ? 'a' : static_cast <char>(input[0]);
-	// int a = static_cast <int>(b);
-
-	// std::cout << "input " << input << " b " << input.length() << std::endl;
+	s = av[1];
+	if(!ft_check(s))
+	{
+		std::cout <<  "kojode" << std::endl;
+		return (1);
+	}
+	n = (!isdigit(s[0]) && s.length() == 1) ? static_cast<int>(s[0]) : atof(av[1]);
+	convert_char(n, s);
+	std::cout << "float: " << std::setprecision(4) << std::fixed << static_cast<float>(n) << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(n) << std::endl;
 	return 0;
 }
