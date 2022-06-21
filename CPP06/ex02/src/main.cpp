@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:09:48 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/21 17:50:18 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/21 20:04:13 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,12 @@ Base * generate(void)
 
 void identify(Base* p)
 {
+	std::cout << "Pointer: ";
 	A* ptrA = dynamic_cast <A*> (p);
 	B* ptrB = dynamic_cast <B*> (p);
 	C* ptrC = dynamic_cast <C*> (p);
 
-	std::cout << " " << ptrA <<  " " << ptrB <<  " " << ptrC << std::endl;
+	// std::cout << " " << ptrA <<  " " << ptrB <<  " " << ptrC << std::endl;
 	if (ptrA)
 		std::cout << "Type: A" << std::endl;
 	else if (ptrB)
@@ -48,9 +49,7 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
-	
-	B ptrB = dynamic_cast <B&> (p);
-
+	std::cout << "Reference: ";
 	try
 	{
 		A ptrA = dynamic_cast <A&> (p);
@@ -89,12 +88,17 @@ int main()
 	std::cout << std::endl << CYAN << "**** Testing ****  " << NONE << std::endl << std::endl;
 	a = generate();
 	identify(a);
+	identify(*a);
 	sleep(std::rand() % 3);
+	std::cout << std::endl;
 	b = generate();
 	identify(b);
+	identify(*b);
 	sleep(std::rand() % 3);
+	std::cout << std::endl;
 	c = generate();
 	identify(c);
+	identify(*c);
 	std::cout << std::endl << RED << "**** Decostructor ****  " << NONE << std::endl << std::endl;
 	delete a;
 	delete b;

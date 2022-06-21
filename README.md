@@ -88,7 +88,7 @@
 			<a href="https://github.com/FranFrau/CPP/tree/master/CPP05">05</a>
 		</td>
 		<td>
-			Valutation needed
+			1
 		</td>
 		<td>
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP05.pdf">Subject</a>
@@ -102,7 +102,7 @@
 			<a href="https://github.com/FranFrau/CPP/tree/master/CPP06">06</a>
 		</td>
 		<td>
-			WIP
+			Valutation needed
 		</td>
 		<td>
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP06.pdf">Subject</a>
