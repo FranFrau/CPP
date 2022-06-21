@@ -94,7 +94,7 @@
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP05.pdf">Subject</a>
 		</td>
 		<td>
-			Work in progress
+			<img src="https://badge42.vercel.app/api/v2/cl3fwxmuu002509l4a9fnzm1a/project/2625659" alt="ffrau's 42 CPP Module 05 Score" />
 		</td>
 	</tr>
 	<tr>

@@ -6,7 +6,7 @@
 #    By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/14 17:58:29 by ffrau             #+#    #+#              #
-#    Updated: 2022/06/21 13:02:16 by ffrau            ###   ########.fr        #
+#    Updated: 2022/06/21 13:14:10 by ffrau            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,13 @@ C_LGRN = \033[92m
 C_LMGN = \033[95m
 C_END = \033[0m
 
-NAME = converter
+NAME = serialization
 
 SRC_DIR = ./src/
 HEADERS_DIR := ./inc/
 OBJS_DIR := ./obj/
 
-SRC = main.cpp 
+SRC = main.cpp Data.cpp
 SRCS = ${addprefix $(SRC_DIR), $(SRC)}
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -45,7 +45,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS_DIR) $(OBJS)
 	@echo "$(C_LYLW)➜ [$(NAME)] Compiling objects ... $(C_END)"
-	@clang++ $(FLAGS) $(OBJS) -o $@
+	@clang++ $(FLAGS) -I $(DEPS) $(OBJS) -o $@
 	@echo "\033[1A$(T_CLR)$(C_LGRN)➜ [$(NAME)] Objects have been compiled successfully ! $(C_END)"
 	@echo "$(C_LGRN)➜ [$(NAME)] $(NAME) has been Compiled Successfully !$(C_END)"
 
@@ -53,7 +53,7 @@ $(OBJS_DIR):
 	@mkdir $(OBJS_DIR)
 
 $(OBJS_DIR)%.o : $(SRC_DIR)%.cpp 
-	@clang++ $(FLAGS)  -c $< -o $@
+	@clang++ $(FLAGS) -I $(DEPS) -c $< -o $@
 	@$(eval IND=$(shell echo $$(($(IND) + 1))))
 	@$(eval PER=$(shell echo $$((($(IND) * 100) / $(NB)))))
 	@printf "$(T_CLR)$(C_LMGN)➜ progress: %3d %% $(C_END)\n\033[1A$(C_END)" $(PER);
