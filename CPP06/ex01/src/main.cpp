@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:09:48 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/21 13:13:49 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/21 16:24:54 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main()
 {
+	std::cout << std::endl;
 	std::cout << GREEN << "**** Constructor ****" << NONE << std::endl << std::endl;
 	Data*		data = new Data;
 	uintptr_t	uint = serialize(data);
@@ -28,5 +29,8 @@ int main()
 	std::cout << serialize(data) << std::endl;
 	std::cout << deserialize(uint) << std::endl;
 	std::cout << serialize(data2) << std::endl;
+	std::cout << std::endl << RED << "**** Decostructor ****  " << NONE << std::endl << std::endl;
+	delete data;
+	std::cout << std::endl;
 	return 0;
 }
