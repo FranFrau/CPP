@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffrau <ffrau@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:09:48 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/21 20:04:13 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/23 17:01:30 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ Base * generate(void)
 	switch (std::rand() % 3)
 	{
 		case 0:
+			std::cout << "Generated: A" << std::endl;
 			return new A;
 		case 1:
+			std::cout << "Generated: B" << std::endl;
 			return new B;
 		case 2:
+			std::cout << "Generated: C" << std::endl;
 			return new C;
 	}
 	return (0);
