@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:35:21 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/23 16:58:57 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/23 21:59:29 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ bool ft_check(std::string s)
 		
 	}
 	else
-		return(ft_control(s));
+		if (s.length() == 1)
+			return (true);
+		else
+			return(ft_control(s));
 	return (true);
 }
 int			main(int ac, char **av)
