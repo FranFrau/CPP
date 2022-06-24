@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 22:07:25 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/24 17:27:36 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/24 20:17:14 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,10 @@ Array<T>::Array(unsigned int n) : _nElements(n)
 template <typename T>
 Array<T>::Array(const Array &copy)
 {
-	*this = copy;
+	this->_nElements = copy._nElements;
+	this->_array = new T[copy._nElements];
+	for (unsigned int i = 0; i < this->_nElements; i++)
+		this->_array[i] = copy._array[i];
 }
 
 template <typename T>
@@ -70,6 +73,7 @@ Array<T>::~Array()
 template <typename T>
 Array<T>	&Array<T>::operator=(const Array &equals)
 {
+	delete[] this->_array;
 	this->_nElements = equals._nElements;
 	this->_array = new T[equals._nElements];
 	for (unsigned int i = 0; i < this->_nElements; i++)
