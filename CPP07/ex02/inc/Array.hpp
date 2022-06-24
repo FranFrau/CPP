@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 22:07:25 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/22 23:11:02 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/24 17:27:36 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Array
 		T*				_array;
 		unsigned int	_nElements;
 	public:
+		unsigned int	getSize();
+
 		Array();
 		Array(unsigned int n);
 		Array(const Array &copy);
@@ -83,5 +85,9 @@ T&	Array<T>::operator[](unsigned int i) const
 	return (this->_array[i]);
 }
 
-
+template <typename T>
+unsigned int	Array<T>::getSize()
+{
+	return (this->_nElements);
+}
 #endif
