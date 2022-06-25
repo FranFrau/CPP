@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 18:41:00 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/24 00:18:46 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/25 15:42:13 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,16 @@ unsigned int	Span::shortestSpan()
 		throw EmptySTLException();
 	long min = LONG_MAX;
 	std::list<int>::iterator it = this->_list.begin();
-	for (unsigned int i = 0; i < getN(); i++)
+	for (unsigned int i = 0; i < this->_list.size(); i++)
 	{
 		std::list<int>::iterator tmp_it= it;
 		int tmp_int = *it;
 		tmp_it++;
-		for (unsigned int j = i + 1; j < getN(); j++)
+		for (unsigned int j = i + 1; j < this->_list.size(); j++)
 		{
-			// std::cout <<tmp_int <<  "    " << *tmp_it <<std::endl;
-			// std::cout << abs(tmp_int - *tmp_it) << std::endl;
 			if (abs(tmp_int - *tmp_it) < min)
 				min = abs(tmp_int - *tmp_it);
+
 			tmp_it++;
 		}
 		it++;
@@ -73,4 +72,20 @@ void	Span::addNumber(int n)
 	if (getList().size() >= getN())
 		throw  OutOfBoundException();
 	this->_list.push_back(n);
+}
+
+void	Span::addNumber(int n, int n2)
+{
+	try
+	{
+		for (int i = n; i <= n2; i++)
+		{
+			this->addNumber(i);
+		}
+		
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }

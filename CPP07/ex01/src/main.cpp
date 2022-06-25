@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 12:24:58 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/24 17:53:24 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/25 00:05:51 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 	
 	std::cout << CYAN << "Test int array function" << NONE << std::endl;
 	std::cout << YELLOW << "int array[] = {3, 9, 0, 10};" << NONE << std::endl;
-	iter(array, 3, print);
+	iter(array, 4, print);
 	std::cout << GREEN << "OK" << NONE << std::endl << std::endl;
 
 	std::cout << CYAN << "Test double array function" << NONE << std::endl;

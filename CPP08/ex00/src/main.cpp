@@ -6,7 +6,7 @@
 /*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:13:58 by ffrau             #+#    #+#             */
-/*   Updated: 2022/06/23 18:31:52 by ffrau            ###   ########.fr       */
+/*   Updated: 2022/06/25 15:41:08 by ffrau            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,14 @@ int		main(void)
 	for_each(a.begin(), a.end(), displayInt);
 	std::cout << std::endl;
 
+	std::cout << std::endl << YELLOW << "easyfind(a, 5) " << NONE << std::endl;
 	print(easyfind(a, 5), "VECTOR");
+	
+	std::cout << std::endl << YELLOW << "easyfind(a, 50) " << NONE << std::endl ;
 	print(easyfind(a, 50), "VECTOR");
 
-	std::cout << std::endl << CYAN << "**** List ****  " << NONE << std::endl << std::endl;
+	std::cout <<  std::endl << "-----------------------------------------------" << std::endl;
+	std::cout << std::endl << CYAN << "**** List ****  " << NONE << std::endl ;
 	std::list<int> b;
 	for (int i = 0; i < 10; i++)
 		b.push_back(i + 1);
@@ -49,6 +53,8 @@ int		main(void)
 	for_each(a.begin(), a.end(), displayInt);
 	std::cout << std::endl;
 
+	std::cout << std::endl << YELLOW << "easyfind(a, 5) " << NONE << std::endl;
 	print(easyfind(b, 5), "LIST");
+	std::cout << std::endl << YELLOW << "easyfind(a, 50) " << NONE << std::endl;
 	print(easyfind(b, 50), "LIST");
 }

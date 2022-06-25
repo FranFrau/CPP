@@ -102,7 +102,7 @@
 			<a href="https://github.com/FranFrau/CPP/tree/master/CPP06">06</a>
 		</td>
 		<td>
-			Valutation needed
+			1
 		</td>
 		<td>
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP06.pdf">Subject</a>
@@ -116,13 +116,13 @@
 			<a href="https://github.com/FranFrau/CPP/tree/master/CPP07">07</a>
 		</td>
 		<td>
-			0
+			1
 		</td>
 		<td>
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP07.pdf">Subject</a>
 		</td>
 		<td>
-			Work in progress
+			<img src="https://badge42.vercel.app/api/v2/cl3fwxmuu002509l4a9fnzm1a/project/2636472" alt="ffrau's 42 CPP Module 07 Score" />
 		</td>
 	</tr>
 	<tr>
@@ -130,13 +130,13 @@
 			<a href="https://github.com/FranFrau/CPP/tree/master/CPP08">08</a>
 		</td>
 		<td>
-			0
+			1
 		</td>
 		<td>
 			<a href="https://github.com/FranFrau/CPP/blob/master/Subjects/CPP08.pdf">Subject</a>
 		</td>
 		<td>
-			Work in progress
+			<img src="https://badge42.vercel.app/api/v2/cl3fwxmuu002509l4a9fnzm1a/project/2636636" alt="ffrau's 42 CPP Module 08 Score" />
 		</td>
 	</tr>
 </table>
